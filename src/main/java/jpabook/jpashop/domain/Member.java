@@ -20,6 +20,6 @@ public class Member {
     @Embedded
     private Address address;
 
-    @OneToMany
+    @OneToMany(mappedBy = "memeber") // order 테이블로 인해 정의됨을 명시
     private List<Order> orders = new ArrayList<Order>();
 }
