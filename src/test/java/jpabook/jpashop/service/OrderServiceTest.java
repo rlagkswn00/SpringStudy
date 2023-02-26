@@ -54,8 +54,12 @@ public class OrderServiceTest {
         Order getOrder = orderRepository.findOne(orderId);
 
         assertEquals(OrderStatus.ORDER, getOrder.getStatus());
+        assertEquals(1,getOrder.getOrderItems().size());
+        assertEquals(10000*orderCount, getOrder.getTotalPrice());
+        assertEquals(8, book.getStockQuantity());
 
-        ㅎ
+
+
     }
 
     @Test
