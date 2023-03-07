@@ -1,10 +1,9 @@
 package hello.core.member;
 
-import org.hamcrest.MatcherAssert;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.assertj.core.api.Assertions;
+
+import org.junit.jupiter.api.Test;
 
 class MemberServiceImplTest {
 
@@ -18,7 +17,7 @@ class MemberServiceImplTest {
         Member findMember = memberService.findMember(1L);
 
         //then
-
+        Assertions.assertThat(member).isEqualTo(findMember);
     }
 
     @Test
