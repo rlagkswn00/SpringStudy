@@ -22,7 +22,7 @@ public class ApplicationContextInfoTest {
     }
 
     @Test
-    @DisplayName( 빈 출력하기")
+    @DisplayName("빈 출력하기")
     void findApplicationBean(){
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
 
