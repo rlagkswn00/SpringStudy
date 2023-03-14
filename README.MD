@@ -2,7 +2,7 @@
 
 [인프런 강의] 김영한 - 스프링 강의실습 자료 모음
 
-[노션 정리 자료](https://hjkim-spring.notion.site/Spring-44fe1e8e6a144cb6ae20de93632bbe1b).
+[노션 정리 자료](https://hjkim-spring.notion.site/Spring-44fe1e8e6a144cb6ae20de93632bbe1b)
 
 **파일 구성**
 
