@@ -1,5 +1,6 @@
-package hello.core;
+package hello.core.scan;
 
+import hello.core.AutoAppConfig;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
