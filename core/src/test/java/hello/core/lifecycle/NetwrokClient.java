@@ -3,7 +3,7 @@ package hello.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetwrokClient implements InitializingBean, DisposableBean {
+public class NetwrokClient{
     private String url;
 
     public NetwrokClient() {
@@ -27,17 +27,17 @@ public class NetwrokClient implements InitializingBean, DisposableBean {
         System.out.println("close "+ url);
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
+
+    public void init(){
         //의존관계 주입이 끝나면 호출되는 함수
-        System.out.println("NetwrokClient.afterPropertiesSet");
+        System.out.println("NetwrokClient.init");
         connect();
         call("초기화 연결 메시지");
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("NetwrokClient.destroy");
+
+    public void close(){
+        System.out.println("NetwrokClient.close");
         disconnect();
     }
 }

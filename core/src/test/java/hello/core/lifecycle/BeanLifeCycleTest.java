@@ -19,7 +19,7 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig{
 
-        @Bean
+        @Bean(initMethod = "init",destroyMethod = "close")
         public NetwrokClient netwrokClient(){
             NetwrokClient netwrokClient = new NetwrokClient();
             netwrokClient.setUrl("http://hello-spring.dev");
