@@ -1,5 +1,7 @@
 package hello.core.lifecycle;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
@@ -28,6 +30,7 @@ public class NetwrokClient{
     }
 
 
+    @PostConstruct
     public void init(){
         //의존관계 주입이 끝나면 호출되는 함수
         System.out.println("NetwrokClient.init");
@@ -36,6 +39,7 @@ public class NetwrokClient{
     }
 
 
+    @PreDestroy
     public void close(){
         System.out.println("NetwrokClient.close");
         disconnect();
