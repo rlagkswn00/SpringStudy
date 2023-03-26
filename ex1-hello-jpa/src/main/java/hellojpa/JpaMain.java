@@ -29,12 +29,19 @@ public class JpaMain {
 //            System.out.println("findMember2 = " + findMember2);
 //
 //            System.out.println("result= " + (findMember == findMember2));
-            Member member = new Member(150L, "A");
-            Member member2 = new Member(160L, "B");
+//            Member member = new Member(150L, "A");
+//            Member member2 = new Member(160L, "B");
+//
+//            em.persist(member2);
+//            em.persist(member);
+//            System.out.println("===============+");
+            Member member = em.find(Member.class, 150L);
+            member.setName("AAAAA");
 
-            em.persist(member2);
-            em.persist(member);
-            System.out.println("===============+");
+            //JPA에서 관리를 하지 않기에 업데이트 되지 않음g
+            em.detach(member);
+
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
