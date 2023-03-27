@@ -1,13 +1,20 @@
 package hellojpa;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "Member")
 public class Member {
     @Id
     private Long id;
+    @Column(length = 10, unique = true)
     private String name;
+
+
+    public Member() {
+
+    }
 
     public Member(Long id, String name) {
         this.id = id;
