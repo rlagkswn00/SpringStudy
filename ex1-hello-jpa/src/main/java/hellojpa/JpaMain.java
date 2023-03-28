@@ -35,11 +35,14 @@ public class JpaMain {
 //            em.persist(member2);
 //            em.persist(member);
 //            System.out.println("===============+");
-            Member member = em.find(Member.class, 150L);
-            member.setName("AAAAA");
+            Member member = new Member();
+            member.setUsername("AAAAA");
+            member.setAge(10);
+            member.setDescription("AAAAAAAA");
+            member.setRoleType(RoleType.USER);
 
             //JPA에서 관리를 하지 않기에 업데이트 되지 않음g
-            em.detach(member);
+            em.persist(member);
 
 
             tx.commit();
