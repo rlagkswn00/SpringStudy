@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -30,8 +31,10 @@ public class JpaMain {
             em.clear();
 
             Member member1 = em.find(Member.class, member.getId());
-            Team team1 = member1.getTeam();
-            System.out.println("team1.getName() = " + team1.getName());
+            List<Member> members = member1.getTeam().getMembers();
+            for (Member member2 : members) {
+                System.out.println("member2.getName() = " + member2.getName());
+            }
 
             tx.commit();
         }catch(Exception e){
