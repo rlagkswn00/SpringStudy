@@ -30,12 +30,6 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            Member member1 = em.find(Member.class, member.getId());
-            List<Member> members = member1.getTeam().getMembers();
-            for (Member member2 : members) {
-                System.out.println("member2.getName() = " + member2.getName());
-            }
-
             tx.commit();
         }catch(Exception e){
             tx.rollback();
