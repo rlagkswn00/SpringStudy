@@ -11,16 +11,18 @@ import java.io.IOException;
 @WebServlet(name = "helloServlet", urlPatterns = "/hello")
 public class HelloServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("HelloServlet.service");
-        System.out.println("req = " + req);
-        System.out.println("res = " + res);
+        System.out.println("request = " + request);
+        System.out.println("response = " + response);
 
-        String username = req.getParameter("username");
+        String username = request.getParameter("username");
+        //Query param 읽어줌.
+
         System.out.println("username = " + username);
 
-        res.setContentType("text/plain");
-        res.setCharacterEncoding("utf-8");
-        res.getWriter().write("hello " + username);
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
+        response.getWriter().write("hello " + username);
     }
 }
