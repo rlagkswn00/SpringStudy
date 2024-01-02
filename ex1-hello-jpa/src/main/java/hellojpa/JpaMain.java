@@ -14,18 +14,11 @@ public class JpaMain {
         tx.begin();
         try{
             Member member = new Member();
-            member.setName("user");
-
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("city", "street", "zipcode"));
+            member.setPeriod(new Period());
+            
             em.persist(member);
-
-            em.flush();
-            em.clear();
-            Member findMember = em.getReference(Member.class, member.getId());
-
-            System.out.println("isLoaded: " + emf.getPersistenceUnitUtil().isLoaded(findMember));
-            System.out.println("findMember.getName() = " + findMember.getName());
-            Hibernate.initialize(findMember);
-
             tx.commit();
         }catch (Exception e){
             tx.rollback();
